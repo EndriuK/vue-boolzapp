@@ -4,70 +4,68 @@
     box-sizing: border-box;
 }
 
-body {
+body,
+html {
+    height: 100%;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-.bg-lineare {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-image: linear-gradient(to bottom, #009688 0px, #009688 50px, #dadbd4 20px, #dadbd4 100px);
 
+
+.container-fluid {
+    height: 100%;
 }
 
-.content {
-    height: 650px;
-    width: 800px;
-    background-color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.chat-list,
+.chat-area {
+    height: 100%;
+    overflow-y: auto;
 }
 
-.content-header-left {
-    height: 50px;
-    width: 192%;
-    background-color: #fff;
+.chat-list {
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+}
+
+.chat-area {
+    background-image: url('../img/mine.jpg');
     position: relative;
-    top: 0;
-    left: -58px;
-    z-index: 2;
+}
+
+.chat-header {
+    background-color: #e6e6e6;
+    color: black;
+    padding: 10px;
+}
+
+.chat-footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #dee2e6;
 }
 
 .avatar {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-
 }
 
-.list-chat {
-    height: 650px;
-    width: 300px;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 18%;
-    transform: translate(-50%, -50%);
+.chat-messages {
+    padding-bottom: 60px;
+    /* Space for the footer */
 }
 
-.chat {
-    height: 650px;
-    width: 516px;
-    background-color: orange;
-    position: absolute;
-    top: 50%;
-    left: 69%;
-    transform: translate(-50%, -50%);
+.chat-message {
+    background-color: #dcf8c6;
+    border-radius: 7.5px;
+    padding: 8px;
+    margin: 5px 0;
+}
 
+.chat-message.sent {
+    background-color: #ffffff;
 }
