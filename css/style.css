@@ -29,6 +29,28 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.content-header-left {
+    height: 50px;
+    width: 192%;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    left: -58px;
+    z-index: 2;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+}
+
 .list-chat {
     height: 650px;
     width: 300px;
@@ -47,4 +69,5 @@ body {
     top: 50%;
     left: 69%;
     transform: translate(-50%, -50%);
+
 }
