@@ -27,9 +27,12 @@
                         @click="setActiveContact(contact)">
                         <div class="d-flex align-items-center">
                             <img :src="contact.avatar" alt="Avatar" class="avatar">
-                            <div class="ms-2">
-                                <div class="fw-bold">{{ contact.name }}</div>
-                                <div class="text-muted">Ultimo messaggio inviato</div>
+                            <div class="ms-2 w-100">
+                                <div class="d-flex justify-content-between">
+                                    <div class="fw-bold">{{ contact.name }}</div>
+                                    <div class="text-muted small">{{ contact.lastMessageTime }}</div>
+                                </div>
+                                <div class="text-muted small">{{ contact.lastMessage }}</div>
                             </div>
                         </div>
                     </li>
@@ -44,18 +47,25 @@
                     </div>
                 </div>
                 <div class="chat-messages p-3">
-                    <div v-for="message in activeContact.messages" :key="message.id" class="d-flex"
-                        :class="{'flex-column align-items-end': message.sent, 'flex-column align-items-start': !message.sent}">
+                    <div v-for="(message, index) in activeContact.messages" :key="message.id" class="d-flex"
+                        :class="{'flex-column align-items-end': message.sent, 'flex-column align-items-start': !message.sent}"
+                        @contextmenu.prevent="showMenu($event, message, index)">
                         <div :class="['chat-message', {'sent': message.sent}]">{{ message.text }}</div>
                     </div>
                 </div>
                 <div class="chat-footer">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Scrivi un messaggio">
-                        <button class="btn btn-primary" type="button">Invia</button>
+                        <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="newMessage"
+                            @keyup.enter="sendMessage">
+                        <button class="btn btn-primary" type="button" @click="sendMessage">Invia</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div v-if="menuVisible" class="context-menu" :style="{top: menuY + 'px', left: menuX + 'px'}">
+            <ul class="list-unstyled">
+                <li @click="deleteMessage">Cancella Messaggio</li>
+            </ul>
         </div>
     </div>
 
