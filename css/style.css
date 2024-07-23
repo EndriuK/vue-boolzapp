@@ -26,6 +26,10 @@ html {
     border-right: 1px solid #dee2e6;
 }
 
+.chat-list .active {
+    background-color: #e9ecef;
+}
+
 .chat-area {
     background-image: url('../img/mine.jpg');
     position: relative;
