@@ -11,11 +11,8 @@
 </head>
 
 <body>
-
-
-    <div class="container-fluid h-100">
+    <div id="app" class="container-fluid h-100">
         <div class="row h-100">
-            <!-- Chat List Sidebar -->
             <div class="col-3 chat-list p-0">
                 <div class="chat-header d-flex align-items-center">
                     <img src="./img/avatar_io.jpg" alt="Avatar" class="avatar">
@@ -25,82 +22,17 @@
                     <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <ul class="list-unstyled">
-                    <li class="p-2">
+                    <li v-for="contact in contacts" :key="contact.id" class="p-2">
                         <div class="d-flex align-items-center">
-                            <img src="./img/avatar_1.jpg" alt="Avatar" class="avatar">
+                            <img :src="contact.avatar" alt="Avatar" class="avatar">
                             <div class="ms-2">
-                                <div class="fw-bold">Michele</div>
+                                <div class="fw-bold">{{ contact.name }}</div>
                                 <div class="text-muted">Ultimo messaggio inviato</div>
                             </div>
                         </div>
                     </li>
-                    <li class="p-2">
-                        <div class="d-flex align-items-center">
-                            <img src="./img/avatar_2.jpg" alt="Avatar" class="avatar">
-                            <div class="ms-2">
-                                <div class="fw-bold">Fabio</div>
-                                <div class="text-muted">Ultimo messaggio inviato</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="p-2">
-                        <div class="d-flex align-items-center">
-                            <img src="./img/avatar_3.jpg" alt="Avatar" class="avatar">
-                            <div class="ms-2">
-                                <div class="fw-bold">Samuele</div>
-                                <div class="text-muted">Ultimo messaggio inviato</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="p-2">
-                        <div class="d-flex align-items-center">
-                            <img src="./img/avatar_4.jpg" alt="Avatar" class="avatar">
-                            <div class="ms-2">
-                                <div class="fw-bold">Alessandro B.</div>
-                                <div class="text-muted">Ultimo messaggio inviato</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="p-2">
-                        <div class="d-flex align-items-center">
-                            <img src="./img/avatar_5.jpg" alt="Avatar" class="avatar">
-                            <div class="ms-2">
-                                <div class="fw-bold">Alessandro L.</div>
-                                <div class="text-muted">Ultimo messaggio inviato</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="p-2">
-                        <div class="d-flex align-items-center">
-                            <img src="./img/avatar_6.jpg" alt="Avatar" class="avatar">
-                            <div class="ms-2">
-                                <div class="fw-bold">Claudia</div>
-                                <div class="text-muted">Ultimo messaggio inviato</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="p-2">
-                        <div class="d-flex align-items-center">
-                            <img src="./img/avatar_7.jpg" alt="Avatar" class="avatar">
-                            <div class="ms-2">
-                                <div class="fw-bold">Federico</div>
-                                <div class="text-muted">Ultimo messaggio inviato</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="p-2">
-                        <div class="d-flex align-items-center">
-                            <img src="./img/avatar_8.jpg" alt="Avatar" class="avatar">
-                            <div class="ms-2">
-                                <div class="fw-bold">Davide</div>
-                                <div class="text-muted">Ultimo messaggio inviato</div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Add more chat list items here -->
                 </ul>
             </div>
-            <!-- Chat Area -->
             <div class="col-9 chat-area p-0 position-relative">
                 <div class="chat-header d-flex align-items-center">
                     <img src="./img/avatar_1.jpg" alt="Avatar" class="avatar">
@@ -128,7 +60,8 @@
         </div>
     </div>
 
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

@@ -11,8 +11,6 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-
-
 .container-fluid {
     height: 100%;
 }
@@ -56,7 +54,6 @@ html {
 
 .chat-messages {
     padding-bottom: 60px;
-    /* Space for the footer */
 }
 
 .chat-message {
@@ -64,6 +61,7 @@ html {
     border-radius: 7.5px;
     padding: 8px;
     margin: 5px 0;
+    max-width: 60%;
 }
 
 .chat-message.sent {
